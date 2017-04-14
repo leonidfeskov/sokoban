@@ -6,8 +6,8 @@ body {
 }
 
 .container {
-    max-width: 1200px;
-    padding: 0 20px;
+    /*max-width: 1200px;
+    padding: 0 20px;*/
 }
 
 .map-wrapper {
@@ -30,7 +30,11 @@ body {
 
 .cell_wall {background-color: gray;}
 .cell_box {background-color: saddlebrown;}
-.cell_target {background-color: green;}
+.cell_box-target {background-color: brown;}
+.cell_target {
+    background-color: green;
+    border-radius: 50%;
+}
 
 .player {
     position: absolute;
@@ -38,5 +42,6 @@ body {
     height: 40px;
     left: 0;
     top: 0;
-    background: blue;
+    background: url('player.png') no-repeat 0 0;
+    background-size: 100% 100%;
 }

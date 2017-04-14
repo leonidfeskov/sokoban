@@ -3,8 +3,8 @@ import { SET_POSITION } from '../constants/Player';
 
 const initialState = {
     position: {
-        x: 0,
-        y: 0
+        x: 1,
+        y: 6
     }
 };
 

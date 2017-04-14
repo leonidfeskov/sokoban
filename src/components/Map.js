@@ -1,28 +1,9 @@
 import React, { Component } from 'react';
-import { CELL_SIZE, CELL_EMPTY, CELL_WALL, CELL_BOX, CELL_TARGET } from '../constants/App';
+import { CELL_SIZE, CELL_EMPTY } from '../constants/App';
+import { getCellNameByCode } from '../utils/utils';
 
 
 export default class Map extends Component {
-    getCellNameByCode(code) {
-        let name;
-
-        switch (code) {
-            case 1:
-                name = CELL_WALL;
-                break;
-            case 2:
-                name = CELL_BOX;
-                break;
-            case 3:
-                name = CELL_TARGET;
-                break;
-            default:
-                name = CELL_EMPTY;
-        }
-
-        return name;
-    }
-
     render() {
         const { data } = this.props;
         let cells = [];
@@ -31,7 +12,7 @@ export default class Map extends Component {
         for (let i = 0; i < length; i++) {
             for (let j = 0; j < data[i].length; j++) {
                 let value = data[i][j];
-                let cellName = this.getCellNameByCode(value);
+                let cellName = getCellNameByCode(value);
 
                 if (cellName !== CELL_EMPTY) {
                     let left = CELL_SIZE * j;
@@ -40,8 +21,7 @@ export default class Map extends Component {
                     cells.push(
                         <div className={`cell cell_${cellName}`}
                              style={{left: left + 'px', top: top + 'px'}}
-                             key={length * i + j}
-                        >{value}</div>
+                             key={length * i + j} />
                     );
                 }
             }
