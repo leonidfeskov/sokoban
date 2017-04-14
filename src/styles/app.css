@@ -12,6 +12,7 @@ body {
 
 .map-wrapper {
     position: relative;
+    margin: 20px;
 }
 
 .map {
@@ -20,20 +21,55 @@ body {
 }
 
 .cell {
-    background-color: #fff;
+    background: no-repeat 50% 50%;
+    background-size: 100% 100%;
     position: absolute;
     width: 40px;
     height: 40px;
     left: 0;
     top: 0;
+    transform: translate3d(-10px, -10px, 0);
 }
 
-.cell_wall {background-color: gray;}
-.cell_box {background-color: saddlebrown;}
-.cell_box-target {background-color: brown;}
+.cell:before, .cell:after {
+    background: no-repeat 0 0;
+    background-size: 100% 100%;
+    content: '';
+    position: absolute;
+}
+
+.cell:before {
+    width: 100%;
+    height: 15px;
+    left: 5px;
+    top: 100%;
+    transform: skewX(30deg);
+}
+
+.cell:after {
+    width: 10px;
+    height: 38px;
+    left: 100%;
+    top: 9px;
+    transform: skewY(60deg);
+}
+
+.cell_wall {background-image: url('brick.png');}
+.cell_wall:before {background-image: url('brick_dark.png');}
+.cell_wall:after {background-image: url('brick_light.png');}
+
+.cell_box {background-image: url('box.png');}
+.cell_box:before {background-image: url('box_dark.png');}
+.cell_box:after {background-image: url('box_light.png');}
+
+.cell_box-target {background-image: url('box-target.png');}
+.cell_box-target:before {background-image: url('box-target_dark.png');}
+.cell_box-target:after {background-image: url('box-target_light.png');}
+
+
 .cell_target {
-    background-color: green;
-    border-radius: 50%;
+    background-image: url('target.png');
+    transform: translate3d(0, 0, 0);
 }
 
 .player {

@@ -77,9 +77,7 @@ class App extends Component {
         return <div className='container'>
             <div className='map-wrapper'>
                 <Map data={map.data} />
-                <div onKeyDown={this.onKeyDown}>
-                    <Player position={player.position} />
-                    </div>
+                <Player position={player.position} />
             </div>
         </div>
     }
