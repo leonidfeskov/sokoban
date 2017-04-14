@@ -1,0 +1,42 @@
+body {
+    background: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    font: 16px/1.2 Arial, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.map-wrapper {
+    position: relative;
+}
+
+.map {
+    background-color: #000;
+    position: relative;
+}
+
+.cell {
+    background-color: #fff;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+}
+
+.cell_wall {background-color: gray;}
+.cell_box {background-color: saddlebrown;}
+.cell_target {background-color: green;}
+
+.player {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    top: 0;
+    background: blue;
+}
