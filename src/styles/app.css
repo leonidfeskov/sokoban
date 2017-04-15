@@ -54,25 +54,25 @@ body {
     transform: skewY(60deg);
 }
 
-.cell_wall {background-image: url('brick.png');}
-.cell_wall:before {background-image: url('brick_dark.png');}
-.cell_wall:after {background-image: url('brick_light.png');}
+.cell_1 {background-image: url('brick.png');}
+.cell_1:before {background-image: url('brick_dark.png');}
+.cell_1:after {background-image: url('brick_light.png');}
 
-.cell_box {background-image: url('box.png');}
-.cell_box:before {background-image: url('box_dark.png');}
-.cell_box:after {background-image: url('box_light.png');}
+.cell_2 {background-image: url('box.png');}
+.cell_2:before {background-image: url('box_dark.png');}
+.cell_2:after {background-image: url('box_light.png');}
 
-.cell_box-target {background-image: url('box-target.png');}
-.cell_box-target:before {background-image: url('box-target_dark.png');}
-.cell_box-target:after {background-image: url('box-target_light.png');}
+.cell_7 {background-image: url('box-target.png');}
+.cell_7:before {background-image: url('box-target_dark.png');}
+.cell_7:after {background-image: url('box-target_light.png');}
 
 
-.cell_target {
+.cell_5 {
     background-image: url('target.png');
     transform: translate3d(0, 0, 0);
 }
 
-.player {
+.cell_3, .cell_8 {
     position: absolute;
     width: 40px;
     height: 40px;
@@ -80,4 +80,5 @@ body {
     top: 0;
     background: url('player.png') no-repeat 0 0;
     background-size: 100% 100%;
+    transform: translate3d(0, -10px, 0);
 }
