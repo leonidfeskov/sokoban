@@ -2,16 +2,7 @@ import { SET_DATA } from '../constants/Map';
 
 
 const initialState = {
-    data: [
-        [0, 0, 0, 1, 1, 1, 1],
-        [0, 0, 0, 1, 0, 0, 1],
-        [0, 0, 0, 1, 0, 0, 1],
-        [0, 0, 0, 1, 2, 5, 1],
-        [1, 1, 1, 1, 0, 0, 1],
-        [1, 0, 0, 0, 0, 0, 1],
-        [1, 3, 2, 5, 0, 0, 1],
-        [1, 1, 1, 1, 1, 1, 1]
-    ]
+    data: []
 };
 
 export default function map(state = initialState, action) {

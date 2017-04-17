@@ -12,11 +12,11 @@ body {
 
 .map-wrapper {
     position: relative;
-    margin: 20px;
+    margin: 50px;
 }
 
 .map {
-    background-color: #000;
+    
     position: relative;
 }
 
@@ -81,4 +81,27 @@ body {
     background: url('player.png') no-repeat 0 0;
     background-size: 100% 100%;
     transform: translate3d(0, -10px, 0);
+}
+
+.levels {
+    margin: 50px;
+}
+
+.level {
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.level_active {
+    border-color: green;
+    color: green;
 }

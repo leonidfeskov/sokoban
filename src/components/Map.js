@@ -19,11 +19,13 @@ export default class Map extends Component {
         }
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const { setData } = this.props;
 
         window.addEventListener('keydown', function(event) {
             const { data } = this.props;
+
+            console.log(data);
             
             // координаты игрока
             let { x, y } = this.getPlayerPosition();
@@ -60,6 +62,7 @@ export default class Map extends Component {
                 if (nextCell === CELL_TYPES.empty || nextCell === CELL_TYPES.target) {
                     data[y][x] -= CELL_TYPES.player;
                     data[nextY][nextX] += CELL_TYPES.player;
+                    
                     setData(data);
                     return;
                 }
@@ -75,7 +78,6 @@ export default class Map extends Component {
                             data[nextNextY][nextNextX] += CELL_TYPES.box;
 
                             setData(data);
-                            return;
                         }
                     }
                 }
@@ -85,6 +87,9 @@ export default class Map extends Component {
 
     render() {
         const { data } = this.props;
+        const height = data.length * CELL_SIZE;
+        const width = data[0].length * CELL_SIZE;
+
         let cells = [];
         let length = data.length;
 
@@ -105,7 +110,7 @@ export default class Map extends Component {
             }
         }
 
-        return <div className='map'>
+        return <div className='map' style={{width: width + 'px', height: height + 'px'}}>
             {cells}
         </div>
     }
