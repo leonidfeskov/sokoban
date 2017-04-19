@@ -25,8 +25,6 @@ export default class Map extends Component {
         window.addEventListener('keydown', function(event) {
             const { data } = this.props;
 
-            console.log(data);
-            
             // координаты игрока
             let { x, y } = this.getPlayerPosition();
             // координаты первой ячейки перед игроком

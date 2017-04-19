@@ -105,3 +105,9 @@ body {
     border-color: green;
     color: green;
 }
+
+.level_lock {
+    background-color: #ddd;
+    color: #fff;
+    cursor: default;
+}

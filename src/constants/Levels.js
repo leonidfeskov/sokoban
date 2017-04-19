@@ -1,1 +1,2 @@
 export const SET_LEVEL = 'SET_LEVEL';
+export const UNLOCK_NEXT_LEVEL = 'UNLOCK_NEXT_LEVEL';
