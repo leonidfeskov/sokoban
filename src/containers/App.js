@@ -8,7 +8,7 @@ import Levels from '../components/Levels';
 import * as mapActions from '../actions/MapActions';
 import * as levelsActions from '../actions/LevelsActions';
 
-import { cloneMap, checkWinLevel } from '../utils/utils';
+import { cloneMap } from '../utils/utils';
 
 
 class App extends Component {
@@ -18,29 +18,22 @@ class App extends Component {
         this.props.map.data = cloneMap(activeLevelData);
     }
 
-    componentDidUpdate() {
-        if (!this.win && checkWinLevel(this.props.map.data)) {
-            console.log('Win!');
-            this.win = true;
-            this.props.levelsActions.unlockNextLevel();
-        }
-    }
-
     render() {
         const { levels, map } = this.props;
 
         const { setData } = this.props.mapActions;
-        const { setLevel } = this.props.levelsActions;
+        const { setLevel, unlockNextLevel } = this.props.levelsActions;
 
         return <div className='container'>
             <Levels active={levels.active}
-                maxAvailable={levels.maxAvailable}
-                maps={levels.maps}
-                setLevel={setLevel}
-                setData={setData} />
+                    maxAvailable={levels.maxAvailable}
+                    maps={levels.maps}
+                    setLevel={setLevel}
+                    setData={setData} />
             <div className='map-wrapper'>
                 <Map data={map.data}
-                    setData={setData} />
+                     setData={setData}
+                     unlockNextLevel={unlockNextLevel}/>
             </div>
         </div>
     }

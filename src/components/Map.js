@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { KEY_CODES } from '../constants/App';
 import { CELL_SIZE, CELL_TYPES } from '../constants/Map';
 
+import { checkWinLevel } from '../utils/utils';
+
 
 export default class Map extends Component {
     getPlayerPosition(){
@@ -79,6 +81,11 @@ export default class Map extends Component {
                         }
                     }
                 }
+            }
+
+            if (checkWinLevel(this.props.data)) {
+                console.log('Win!');
+                this.props.unlockNextLevel();
             }
         }.bind(this));
     }
